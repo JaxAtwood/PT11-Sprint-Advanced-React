@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import FetchData from "./components/FetchData";
+import { useDarkMode } from "./hooks/useDarkMode";
+// import { Background } from "./components/Styles";
 import './App.css';
 
 function App() {
+
+  const [darkMode, setDarkMode] = useDarkMode(false);
+  const toggleMode = e => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div data-testid="testtag" className="App">
+      <div className="dark-mode__toggle">
+        <div
+          onClick={toggleMode}
+          className={darkMode ? 'toggle toggled' : 'toggle'}
+        />
+      </div>
+      <h1>SPRINT ADVANCED REACT</h1>
+      <h2>World Cup Soccer Players!</h2>
+      <FetchData />
     </div>
   );
 }

@@ -31,3 +31,33 @@
     transform: rotate(360deg);
   }
 }
+
+.dark-mode__toggle {
+  background: white;
+  border: 1px solid black;
+  height: 18px;
+  position: relative;
+  width: 38px;
+}
+
+.toggle {
+  background: magenta;
+  height: 18px;
+  left: 0;
+  position: absolute;
+  transition: 0.2s;
+  width: 20px;
+}
+
+.toggled {
+  left: 18px;
+}
+
+.dark-mode {
+  color: #fff;
+  background-color:pink;
+  background-image: url(./assets/soccer.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
